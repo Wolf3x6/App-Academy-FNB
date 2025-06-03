@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pine City Weather</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+           <img src="images/logo.png" alt="Pine City Zoo Logo">
+        </div>  
+        <div id="top-menu">
+            <a href="animals.html">ANIMALS</a>
+            <a href="index.html">MAP</a>
+            <a href="places.html">PLACES</a>
+        </div>
+        <div id="main">
+            <div id="content">
+                <div id="info-box-full">
+                    <h3>PINE CITY WEATHER</h3>
+                        <p id="datetime"></p>
+                        <p><img class="info-box-weather-icon" src="images/partly-cloudy.png"/>Partly Cloudy</p>
+                        <p>&uarr; 25&deg &darr; 16&deg;</p>
+                    <h1 class="info-box-weather-icon">22&deg;</h1>
+                        <p><strong>FORECAST</strong></p>
+                    <table>
+                        <tr>
+                            <td>Tuesday</td>                          
+                            <td><img class="info-box-weather-icon" src="images/sunny.png"/></td>
+                            <td>&uarr;28</td>
+                            <td>&darr;17</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>                          
+                            <td><img class="info-box-weather-icon" src="images/rain.png"/></td>
+                            <td>&uarr;26</td>
+                            <td>&darr;18</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>                          
+                            <td><img class="info-box-weather-icon" src="images/sunny.png"/></td>
+                            <td>&uarr;27</td>
+                            <td>&darr;19</td>
+                        </tr>
+                            <td>Friday</td>
+                            <td><img class="info-box-weather-icon" src="images/partly-cloudy.png"/></td>
+                            <td>&uarr;25</td>
+                            <td>&darr;20</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>                          
+                            <td><img class="info-box-weather-icon" src="images/sunny.png"/></td>
+                            <td>&uarr;28</td>
+                            <td>&darr;21</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>                          
+                            <td><img class="info-box-weather-icon" src="images/rain.png"/></td>
+                            <td>&uarr;20</td>
+                            <td>&darr;15</td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        <div id="bottom-menu">
+            <a href="#">WEATHER</a>
+            <a href="feedback.html">FEEDBACK</a>
+        </div>  
+        <script>
+            function updateDateTime() {
+            const now = new Date();
+
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+            }
+            // Update the content of the datetime element
+
+            document.getElementById("datetime").textContent = now.toLocaleString('en-ZA', options);
+        }
+
+            // Initial call
+            updateDateTime();
+
+            // Update every second
+            setInterval(updateDateTime, 1000);
+        </script>
+    </body>
+</html>
